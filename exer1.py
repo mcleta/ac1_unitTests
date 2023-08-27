@@ -8,6 +8,7 @@ def salario_com_desconto_inss( valor_hora: float, num_aulas: float, percent_inss
     valor_init = valor_hora * num_aulas
     desconto = valor_init * ( percent_inss / 100 )
     valor_final = valor_init - desconto
+    v_aredandado = round(valor_final, 2)
     return valor_final
 
 # Programa principal
@@ -19,7 +20,7 @@ class SalarioLiquido( unittest.TestCase ):
         self.assertEqual( salario_com_desconto_inss( 20.5, 240, 1.7 ), 4836.36 )
 
     def test_sor_3( self ):
-        self.assertEqual( salario_com_desconto_inss( 20.5, 240, 1.7 ), 4836.36 )
+        self.assertEqual( salario_com_desconto_inss( 13.9, 200, 6.48 ), 2599.86 )
 
 if __name__ == '__main__':
     unittest.main
